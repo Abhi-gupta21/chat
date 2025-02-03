@@ -1,0 +1,12 @@
+openai
+ipykernel
+requests
+langchain
+langchain_core
+python-dotenv
+langchain_community
+pypdf
+faiss-cpu
+numpy
+langchain-openai
+streamlit
