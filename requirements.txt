@@ -10,3 +10,8 @@ faiss-cpu
 numpy
 langchain-openai
 streamlit
+pydub
+torch
+transformers
+audioop-lts
+accelerate>=0.26.0
