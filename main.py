@@ -160,6 +160,7 @@ if audio_input:
 
     result = pipe("audio.mp3", generate_kwargs={"task": "translate"})
     st.write(result["text"])
+    st.write(result)
 
     input = result["text"]
     session_history = get_session_history(session_id)
