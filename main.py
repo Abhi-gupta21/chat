@@ -138,7 +138,7 @@ if audio_input:
     device = "cuda:0" if torch.cuda.is_available() else "cpu"
     torch_dtype = torch.float16 if torch.cuda.is_available() else torch.float32
 
-    model_id = "openai/whisper-base"
+    model_id = "openai/whisper-medium"
 
     model = AutoModelForSpeechSeq2Seq.from_pretrained(
         model_id, torch_dtype=torch_dtype, low_cpu_mem_usage=True, use_safetensors=True
@@ -154,11 +154,20 @@ if audio_input:
         feature_extractor=processor.feature_extractor,
         torch_dtype=torch_dtype,
         device=device,
+        return_language=True
     )
+    
+    from langdetect import detect
 
+    result = pipe("audio.mp3", generate_kwargs={"task": "transcribe"})
+    text = result["text"]
 
+    language = detect(text)
+    st.write(text)
+    st.write(f"Detected language: {language}")
+    
 
-    result = pipe("audio.mp3", generate_kwargs={"task": "translate"})
+    result = pipe("audio.mp3", generate_kwargs={"task": "translate"}, return_language=True)
     st.write(result["text"])
     st.write(result)
 
