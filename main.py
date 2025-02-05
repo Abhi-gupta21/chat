@@ -2,7 +2,7 @@ import os
 from pydub import AudioSegment
 import streamlit as st
 import torch
-from transformers import AutoTokenizer, AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
+from transformers import AutoModelForSpeechSeq2Seq, AutoProcessor, pipeline
 from langchain_community.vectorstores import FAISS
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_community.chat_message_histories import ChatMessageHistory
