@@ -13,5 +13,4 @@ streamlit
 pydub
 torch
 transformers
-audioop
 accelerate>=0.26.0
