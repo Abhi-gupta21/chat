@@ -74,7 +74,7 @@ history_aware_retriever = create_history_aware_retriever(llm, retriever, context
 system_prompt = (
     "You are an assistant for question answering tasks."
     "You will be provided with a question and a context."
-    "You will answer the question based on the context in {language}."
+    "You will answer the question based on the context in {language} language."
     "If the context is not relevant, just say that you don't know and you are not made to answer such qustions."
     "If you don't know the answer, just say that you don't know, don't try to make up an answer."
     "\n\n"
